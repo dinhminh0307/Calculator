@@ -86,9 +86,13 @@ public class HelloController implements Initializable {
 
     private String storeToString = "";
     private double preNumber;
+
     private double postNumber;
     private double answer;
+
+    private boolean isClicked;
     public void setComponent() {
+        isClicked = false;
         resultText = new Text(Double.toString(answer));
         resultText.setFont(new Font("Arial", 20));
         anchorPane.getChildren().add(resultText);
@@ -114,9 +118,6 @@ public class HelloController implements Initializable {
             resultText.setText(Double.toString(preNumber));
         }
         else {
-            if(button0.isFocused()) {
-                postNumber = Double.parseDouble(text0.getText());
-            }
             storeToString = storeToString + newAnswer.to_String() + text0.getText();
             resultText.setText(storeToString);
             newAnswer.setValue(Double.parseDouble(storeToString));
@@ -126,20 +127,139 @@ public class HelloController implements Initializable {
         Answer newAnswer = new Answer();
         anchorPane.getChildren().clear();
         if(newAnswer.getValue() == 0.0) {
-            preNumber = Double.parseDouble(text0.getText());
+            preNumber = Double.parseDouble(text1.getText());
             resultText.setText(Double.toString(preNumber));
         }
         else {
-            storeToString = storeToString + newAnswer.to_String() + text0.getText();
+            storeToString = storeToString + newAnswer.to_String() + text1.getText();
             resultText.setText(storeToString);
             newAnswer.setValue(Double.parseDouble(storeToString));
         }
     }
-    public void clearTheScreen() {
+    public void onButton2(MouseEvent event) {
+        Answer newAnswer = new Answer();
+        anchorPane.getChildren().clear();
+        if(newAnswer.getValue() == 0.0) {
+            preNumber = Double.parseDouble(text2.getText());
+            resultText.setText(Double.toString(preNumber));
+        }
+        else {
+            storeToString = storeToString + newAnswer.to_String() + text2.getText();
+            resultText.setText(storeToString);
+            newAnswer.setValue(Double.parseDouble(storeToString));
+        }
+    }
+    public void onButton3(MouseEvent event) {
+        Answer newAnswer = new Answer();
+        anchorPane.getChildren().clear();
+        if(newAnswer.getValue() == 0.0) {
+            preNumber = Double.parseDouble(text3.getText());
+            resultText.setText(Double.toString(preNumber));
+        }
+        else {
+            storeToString = storeToString + newAnswer.to_String() + text3.getText();
+            resultText.setText(storeToString);
+            newAnswer.setValue(Double.parseDouble(storeToString));
+        }
+    }
+    public void onButton4(MouseEvent event) {
+        Answer newAnswer = new Answer();
+        anchorPane.getChildren().clear();
+        if(newAnswer.getValue() == 0.0) {
+            preNumber = Double.parseDouble(text4.getText());
+            resultText.setText(Double.toString(preNumber));
+        }
+        else {
+            storeToString = storeToString + newAnswer.to_String() + text4.getText();
+            resultText.setText(storeToString);
+            newAnswer.setValue(Double.parseDouble(storeToString));
+        }
+    }
 
+    public void onButton5(MouseEvent event) {
+        Answer newAnswer = new Answer();
+        anchorPane.getChildren().clear();
+        if(newAnswer.getValue() == 0.0) {
+            preNumber = Double.parseDouble(text5.getText());
+            resultText.setText(Double.toString(preNumber));
+        }
+        else {
+            storeToString = storeToString + newAnswer.to_String() + text5.getText();
+            resultText.setText(storeToString);
+            newAnswer.setValue(Double.parseDouble(storeToString));
+        }
+    }
+
+    public void onButton6(MouseEvent event) {
+        Answer newAnswer = new Answer();
+        anchorPane.getChildren().clear();
+        if(newAnswer.getValue() == 0.0) {
+            preNumber = Double.parseDouble(text6.getText());
+            resultText.setText(Double.toString(preNumber));
+        }
+        else {
+            storeToString = storeToString + newAnswer.to_String() + text6.getText();
+            resultText.setText(storeToString);
+            newAnswer.setValue(Double.parseDouble(storeToString));
+        }
+    }
+    public void onButton7(MouseEvent event) {
+        Answer newAnswer = new Answer();
+        anchorPane.getChildren().clear();
+        if(newAnswer.getValue() == 0.0) {
+            preNumber = Double.parseDouble(text7.getText());
+            resultText.setText(Double.toString(preNumber));
+        }
+        else {
+            storeToString = storeToString + newAnswer.to_String() + text7.getText();
+            resultText.setText(storeToString);
+            newAnswer.setValue(Double.parseDouble(storeToString));
+        }
+    }
+    public void onButton8(MouseEvent event) {
+        Answer newAnswer = new Answer();
+        anchorPane.getChildren().clear();
+        if(newAnswer.getValue() == 0.0) {
+            preNumber = Double.parseDouble(text8.getText());
+            resultText.setText(Double.toString(preNumber));
+        }
+        else {
+            storeToString = storeToString + newAnswer.to_String() + text8.getText();
+            resultText.setText(storeToString);
+            newAnswer.setValue(Double.parseDouble(storeToString));
+        }
+    }
+    public void onButton9(MouseEvent event) {
+        Answer newAnswer = new Answer();
+        anchorPane.getChildren().clear();
+        if(newAnswer.getValue() == 0.0) {
+            preNumber = Double.parseDouble(text9.getText());
+            resultText.setText(Double.toString(preNumber));
+        }
+        else {
+            storeToString = storeToString + newAnswer.to_String() + text9.getText();
+            resultText.setText(storeToString);
+            newAnswer.setValue(Double.parseDouble(storeToString));
+        }
+    }
+
+    public void onOperator() {
+        buttonPlus.setOnMouseClicked((MouseEvent event) -> {
+            isClicked = true;
+        });
+        buttonMinus.setOnMouseClicked((MouseEvent event) -> {
+            isClicked = true;
+        });
+        buttonMultiple.setOnMouseClicked((MouseEvent event) -> {
+            isClicked = true;
+        });
+        buttonDivider.setOnMouseClicked((MouseEvent event) -> {
+            isClicked = true;
+        });
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setComponent();
+        onOperator();
     }
 }
